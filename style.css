@@ -1,0 +1,182 @@
+/* font-family: "Fira Code", monospace; */
+/* font-weight: 300-700 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #f15025;
+  --main-black: #222;
+  --main-white: #fff;
+  --off-white: #f7f7f7;
+  --dark-grey: #afafaf;
+  --transition: all 0.3s linear;
+  --spacing: 0.2rem;
+}
+html {
+}
+body {
+  font-family: "Fira Code", monospace;
+  color: var(--main-black);
+  background-color: var(--main-white);
+  line-height: 1.5;
+}
+a,
+button,
+input[type="submit"] {
+  cursor: pointer;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  margin-bottom: 1.25rem;
+}
+/* h1 {
+  font-size: 3rem;
+}
+h2 {
+  margin-bottom: 0;
+} */
+p {
+  font-weight: 300;
+  font-size: 0.7rem;
+  line-height: 2;
+}
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  text-transform: capitalize;
+  padding: 0.5rem 1rem;
+  border: 3px solid var(--primary-color);
+  color: var(--primary-color);
+  margin: 3rem;
+  transition: var(--transition);
+}
+.btn:hover {
+  background-color: var(--primary-color);
+  color: var(--main-white);
+}
+/* 329. ----------Navbar mini project---------- */
+.main-navbar {
+  background-color: var(--dark-grey);
+  padding: 0 2rem;
+}
+.main-navbar a {
+  text-transform: capitalize;
+  display: block;
+  padding: 1rem 0;
+  color: var(--primary-color);
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+}
+.main-navbar a:hover {
+  color: var(--main-black);
+}
+@media screen and (min-width: 992px) {
+  .main-navbar ul {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* align-items: center; */
+    justify-items: center;
+  }
+}
+/* 330-331. -------------Hero page------------- */
+.hero-header {
+  height: 100vh;
+  background: var(--primary-color);
+  color: var(--main-white);
+  display: grid;
+  /* justify-items: center;
+    align-items: center; */
+  place-items: center;
+}
+.hero-banner {
+  width: 90vw;
+  max-width: 40rem;
+}
+.hero-banner p {
+  width: 80%;
+}
+@media screen and (min-width: 768px) {
+  .hero-header {
+    background: linear-gradient(rgba(241, 80, 37, 0.75), rgba(0, 0, 0, 0.75)),
+      url(./images/image-2.jpeg) center / cover no-repeat;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hero-banner {
+    padding: 0 1rem;
+  }
+}
+/* 332. -------------Cards page------------- */
+/* 333. -------------Cards page (small screen)------------- */
+
+.cards {
+  padding: 4rem 0;
+}
+.title {
+  text-align: center;
+}
+.cards-center {
+  width: 95vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.card {
+  border: 1px solid var(--dark-grey);
+  margin-bottom: 3rem;
+  /* fix the row height if some cards have more text than the others */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+.card img {
+  height: auto;
+}
+.card-info {
+  padding: 1rem;
+}
+.card-footer {
+  background-color: var(--dark-grey);
+  padding: 0.5rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+.card-footer span {
+  color: var(--primary-color);
+}
+@media screen and (min-width: 768px) {
+  /* 334. -------------Cards page (big screen with media queries)------------- */
+  .cards-center {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 2rem;
+  }
+  /* 335. -------------Cards page (big screen no media queries)------------- */
+  /* .cards-center {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
+    gap: 0 2rem;
+  } */
+}
+@media screen and (min-width: 1170px) {
+  .cards-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
